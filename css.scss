@@ -1,0 +1,29 @@
+// .5px border
+@mixin half-border($color, $radius) {
+  position: relative;
+  z-index: 1;
+  border-radius: $radius;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    border: 1px solid $color;
+    transform-origin: 0 0;
+    transform: scale(0.5);
+    border-radius: $radius*2;
+    z-index: -1;
+  }
+}
+
+// 多行省略
+@mixin multi-ellipsis($lineClamp) {
+  -webkit-line-clamp: $lineClamp;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
