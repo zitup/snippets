@@ -27,3 +27,15 @@
   text-overflow: ellipsis;
   word-break: break-all;
 }
+
+// flex 单个元素靠右展示
+// 如果是固定的 3 个元素，可以给 div2 flex-grow: 1，将 div3 挤到最右
+// 但是假如 div2 是动态的，可能有可能没有，就可以使用下面的方式，控制 div3
+.container {
+  display: flex;
+  .div1 { /**/ }
+  .div2 { /**/ }
+  .div3 {
+    margin-left: auto;
+  }
+}
